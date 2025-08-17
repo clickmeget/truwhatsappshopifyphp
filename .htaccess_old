@@ -1,0 +1,24 @@
+# Enable the RewriteEngine
+RewriteEngine On
+
+# Exclude the /assets/ directory and its files
+RewriteCond %{REQUEST_URI} !^/assets/
+
+# Exclude the /assets/ directory and its files
+RewriteCond %{REQUEST_URI} !^/.well-known/
+
+# Exclude the /webhook/ directory and its files
+RewriteCond %{REQUEST_URI} !^/webhook/
+
+# Exclude the /api/ directory and its files
+RewriteCond %{REQUEST_URI} !^/api/
+
+# Exclude the /api/ directory and its files
+RewriteCond %{REQUEST_URI} !^/addapp.php
+
+# Exclude the /api/ directory and its files
+RewriteCond %{REQUEST_URI} !^/cron.php
+
+# Redirect all other requests to index.php
+RewriteRule ^(.*)$ index.php [QSA,L]
+
